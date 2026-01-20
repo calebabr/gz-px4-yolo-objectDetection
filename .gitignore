@@ -32,5 +32,3 @@ Thumbs.db
 "src/image_processing/Working Data"
 "src/image_processing/data splits"
 "src/image_processing/data"
-*.csv
-*.jpg
