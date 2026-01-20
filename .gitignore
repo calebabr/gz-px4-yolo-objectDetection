@@ -1,0 +1,36 @@
+# ROS2 build artifacts
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.Python
+
+# C++
+*.o
+*.so
+*.a
+CMakeCache.txt
+CMakeFiles/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# MSC
+"src/image_processing/Working Data"
+"src/image_processing/data splits"
+"src/image_processing/data"
+*.csv
+*.jpg
