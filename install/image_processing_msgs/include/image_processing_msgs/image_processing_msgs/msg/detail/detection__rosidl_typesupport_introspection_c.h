@@ -1,1 +1,0 @@
-/home/cjabrantes/ros2_px4_offboard_example_ws/build/image_processing_msgs/rosidl_typesupport_introspection_c/image_processing_msgs/msg/detail/detection__rosidl_typesupport_introspection_c.h

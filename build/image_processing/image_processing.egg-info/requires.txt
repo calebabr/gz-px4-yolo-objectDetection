@@ -1,7 +1,0 @@
-image_processing_msgs
-numpy<2
-opencv-python-headless<4.9
-setuptools
-torch
-torchaudio
-torchvision

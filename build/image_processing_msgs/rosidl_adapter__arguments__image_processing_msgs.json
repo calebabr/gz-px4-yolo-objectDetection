@@ -1,9 +1,0 @@
-{
-  "package_name": "image_processing_msgs",
-  "non_idl_tuples": [
-    "/home/cjabrantes/ros2_px4_offboard_example_ws/src/image_processing_msgs:msg/Detection.msg",
-    "/home/cjabrantes/ros2_px4_offboard_example_ws/src/image_processing_msgs:msg/DetectionArray.msg",
-    "/home/cjabrantes/ros2_px4_offboard_example_ws/src/image_processing_msgs:msg/ProminentObject.msg",
-    "/home/cjabrantes/ros2_px4_offboard_example_ws/src/image_processing_msgs:msg/ProminentObjectArray.msg"
-  ]
-}

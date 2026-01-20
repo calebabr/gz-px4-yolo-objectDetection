@@ -1,1 +1,0 @@
-/home/cjabrantes/ros2_px4_offboard_example_ws/build/image_processing_msgs/rosidl_generator_py/image_processing_msgs/msg/_prominent_object_s.c
