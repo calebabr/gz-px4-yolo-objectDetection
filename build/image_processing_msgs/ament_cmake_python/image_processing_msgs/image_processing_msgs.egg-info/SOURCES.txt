@@ -1,0 +1,11 @@
+setup.py
+image_processing_msgs/__init__.py
+image_processing_msgs.egg-info/PKG-INFO
+image_processing_msgs.egg-info/SOURCES.txt
+image_processing_msgs.egg-info/dependency_links.txt
+image_processing_msgs.egg-info/top_level.txt
+image_processing_msgs/msg/__init__.py
+image_processing_msgs/msg/_detection.py
+image_processing_msgs/msg/_detection_array.py
+image_processing_msgs/msg/_prominent_object.py
+image_processing_msgs/msg/_prominent_object_array.py

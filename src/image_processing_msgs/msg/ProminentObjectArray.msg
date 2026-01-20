@@ -1,0 +1,3 @@
+# ProminentObjectArray.msg
+
+ProminentObject[] objects

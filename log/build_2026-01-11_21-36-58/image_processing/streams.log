@@ -1,0 +1,28 @@
+[0.569s] Invoking command in '/home/cjabrantes/ros2_px4_offboard_example_ws/src/image_processing': AMENT_PREFIX_PATH=/home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs LD_LIBRARY_PATH=/home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/cjabrantes/ros2_px4_offboard_example_ws/build/image_processing/prefix_override:/home/cjabrantes/.local/lib/python3.10/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing/lib/python3.10/site-packages:/home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/image_processing build --build-base /home/cjabrantes/ros2_px4_offboard_example_ws/build/image_processing/build install --record /home/cjabrantes/ros2_px4_offboard_example_ws/build/image_processing/install.log --single-version-externally-managed install_data
+[0.808s] running egg_info
+[0.808s] writing ../../build/image_processing/image_processing.egg-info/PKG-INFO
+[0.809s] writing dependency_links to ../../build/image_processing/image_processing.egg-info/dependency_links.txt
+[0.809s] writing entry points to ../../build/image_processing/image_processing.egg-info/entry_points.txt
+[0.809s] writing requirements to ../../build/image_processing/image_processing.egg-info/requires.txt
+[0.809s] writing top-level names to ../../build/image_processing/image_processing.egg-info/top_level.txt
+[0.810s] reading manifest file '../../build/image_processing/image_processing.egg-info/SOURCES.txt'
+[0.811s] writing manifest file '../../build/image_processing/image_processing.egg-info/SOURCES.txt'
+[0.811s] running build
+[0.811s] running build_py
+[0.812s] running install
+[0.812s] running install_lib
+[0.813s] running install_data
+[0.813s] running install_egg_info
+[0.815s] removing '/home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing/lib/python3.10/site-packages/image_processing-0.0.0-py3.10.egg-info' (and everything under it)
+[0.815s] Copying ../../build/image_processing/image_processing.egg-info to /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing/lib/python3.10/site-packages/image_processing-0.0.0-py3.10.egg-info
+[0.816s] running install_scripts
+[0.832s] Installing behavior_controller script to /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing/lib/image_processing
+[0.832s] Installing distance_predictor_xyz script to /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing/lib/image_processing
+[0.832s] Installing drone_behavior_node script to /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing/lib/image_processing
+[0.832s] Installing drone_pose_publisher script to /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing/lib/image_processing
+[0.833s] Installing image_labeler script to /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing/lib/image_processing
+[0.833s] Installing image_subscriber script to /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing/lib/image_processing
+[0.833s] Installing yolo_subscriber script to /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing/lib/image_processing
+[0.833s] Installing yolov11_subscriber script to /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing/lib/image_processing
+[0.833s] writing list of installed files to '/home/cjabrantes/ros2_px4_offboard_example_ws/build/image_processing/install.log'
+[0.851s] Invoked command in '/home/cjabrantes/ros2_px4_offboard_example_ws/src/image_processing' returned '0': AMENT_PREFIX_PATH=/home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs LD_LIBRARY_PATH=/home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/cjabrantes/ros2_px4_offboard_example_ws/build/image_processing/prefix_override:/home/cjabrantes/.local/lib/python3.10/site-packages/colcon_core/task/python/colcon_distutils_commands:/home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing/lib/python3.10/site-packages:/home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/image_processing build --build-base /home/cjabrantes/ros2_px4_offboard_example_ws/build/image_processing/build install --record /home/cjabrantes/ros2_px4_offboard_example_ws/build/image_processing/install.log --single-version-externally-managed install_data

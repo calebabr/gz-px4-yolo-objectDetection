@@ -1,0 +1,1 @@
+/home/cjabrantes/ros2_px4_offboard_example_ws/src/px4_msgs/msg/VehicleConstraints.msg

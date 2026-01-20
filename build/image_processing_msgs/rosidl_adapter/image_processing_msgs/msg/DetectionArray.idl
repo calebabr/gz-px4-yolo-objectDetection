@@ -1,0 +1,15 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from image_processing_msgs/msg/DetectionArray.msg
+// generated code does not contain a copyright notice
+
+#include "image_processing_msgs/msg/Detection.idl"
+
+module image_processing_msgs {
+  module msg {
+    @verbatim (language="comment", text=
+      "DetectionArray.msg")
+    struct DetectionArray {
+      sequence<image_processing_msgs::msg::Detection> detections;
+    };
+  };
+};

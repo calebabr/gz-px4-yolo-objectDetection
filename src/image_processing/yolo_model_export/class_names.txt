@@ -1,0 +1,5 @@
+Building
+Car
+Forest
+Person
+Truck

@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "image_processing_msgs__py",
+		"source" : "/home/cjabrantes/ros2_px4_offboard_example_ws/build/image_processing_msgs/image_processing_msgs__py"
+	}
+}

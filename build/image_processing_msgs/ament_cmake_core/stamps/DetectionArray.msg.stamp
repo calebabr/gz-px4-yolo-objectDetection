@@ -1,0 +1,3 @@
+# DetectionArray.msg
+
+Detection[] detections

@@ -1,0 +1,30 @@
+running develop
+running egg_info
+creating image_processing.egg-info
+writing image_processing.egg-info/PKG-INFO
+writing dependency_links to image_processing.egg-info/dependency_links.txt
+writing entry points to image_processing.egg-info/entry_points.txt
+writing requirements to image_processing.egg-info/requires.txt
+writing top-level names to image_processing.egg-info/top_level.txt
+writing manifest file 'image_processing.egg-info/SOURCES.txt'
+reading manifest file 'image_processing.egg-info/SOURCES.txt'
+writing manifest file 'image_processing.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing/lib/python3.10/site-packages/image-processing.egg-link (link to .)
+Installing behavior_controller script to /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing/lib/image_processing
+Installing distance_predictor_xyz script to /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing/lib/image_processing
+Installing drone_behavior_node script to /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing/lib/image_processing
+Installing drone_pose_publisher script to /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing/lib/image_processing
+Installing image_labeler script to /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing/lib/image_processing
+Installing image_subscriber script to /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing/lib/image_processing
+Installing yolo_subscriber script to /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing/lib/image_processing
+Installing yolov11_subscriber script to /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing/lib/image_processing
+
+Installed /home/cjabrantes/ros2_px4_offboard_example_ws/build/image_processing
+running symlink_data
+creating /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing/share/ament_index
+creating /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing/share/ament_index/resource_index
+creating /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing/share/ament_index/resource_index/packages
+symbolically linking /home/cjabrantes/ros2_px4_offboard_example_ws/build/image_processing/resource/image_processing -> /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing/share/ament_index/resource_index/packages
+symbolically linking /home/cjabrantes/ros2_px4_offboard_example_ws/build/image_processing/package.xml -> /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing/share/image_processing
+creating /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing/share/image_processing/msg

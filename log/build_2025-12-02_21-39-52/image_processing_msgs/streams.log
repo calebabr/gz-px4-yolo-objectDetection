@@ -1,0 +1,279 @@
+[0.009s] Invoking command in '/home/cjabrantes/ros2_px4_offboard_example_ws/build/image_processing_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/cjabrantes/ros2_px4_offboard_example_ws/install/px4_offboard:/home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing:/opt/ros/humble /usr/bin/cmake /home/cjabrantes/ros2_px4_offboard_example_ws/src/image_processing_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs
+[0.069s] -- The C compiler identification is GNU 11.4.0
+[0.129s] -- The CXX compiler identification is GNU 11.4.0
+[0.137s] -- Detecting C compiler ABI info
+[0.208s] -- Detecting C compiler ABI info - done
+[0.215s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.216s] -- Detecting C compile features
+[0.216s] -- Detecting C compile features - done
+[0.219s] -- Detecting CXX compiler ABI info
+[0.298s] -- Detecting CXX compiler ABI info - done
+[0.305s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.305s] -- Detecting CXX compile features
+[0.306s] -- Detecting CXX compile features - done
+[0.309s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.456s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.508s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.551s] -- Found std_msgs: 4.9.0 (/opt/ros/humble/share/std_msgs/cmake)
+[0.591s] -- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.595s] -- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.602s] -- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.612s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.625s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.646s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.926s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[1.359s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.531s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.553s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[1.556s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[1.579s] -- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[1.579s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[1.579s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[1.579s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[1.604s] -- Found PythonExtra: .so  
+[1.690s] -- Configuring done
+[1.730s] -- Generating done
+[1.740s] -- Build files have been written to: /home/cjabrantes/ros2_px4_offboard_example_ws/build/image_processing_msgs
+[1.746s] Invoked command in '/home/cjabrantes/ros2_px4_offboard_example_ws/build/image_processing_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/cjabrantes/ros2_px4_offboard_example_ws/install/px4_offboard:/home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing:/opt/ros/humble /usr/bin/cmake /home/cjabrantes/ros2_px4_offboard_example_ws/src/image_processing_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs
+[1.748s] Invoking command in '/home/cjabrantes/ros2_px4_offboard_example_ws/build/image_processing_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/cjabrantes/ros2_px4_offboard_example_ws/install/px4_offboard:/home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing:/opt/ros/humble /usr/bin/cmake --build /home/cjabrantes/ros2_px4_offboard_example_ws/build/image_processing_msgs -- -j12 -l12
+[1.789s] [  1%] [34m[1mGenerating C code for ROS interfaces[0m
+[1.796s] [  3%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[1.802s] [  3%] Built target ament_cmake_python_symlink_image_processing_msgs
+[2.007s] running egg_info
+[2.007s] creating image_processing_msgs.egg-info
+[2.007s] writing image_processing_msgs.egg-info/PKG-INFO
+[2.007s] writing dependency_links to image_processing_msgs.egg-info/dependency_links.txt
+[2.008s] writing top-level names to image_processing_msgs.egg-info/top_level.txt
+[2.008s] writing manifest file 'image_processing_msgs.egg-info/SOURCES.txt'
+[2.009s] reading manifest file 'image_processing_msgs.egg-info/SOURCES.txt'
+[2.009s] writing manifest file 'image_processing_msgs.egg-info/SOURCES.txt'
+[2.033s] [  3%] Built target ament_cmake_python_build_image_processing_msgs_egg
+[2.145s] [  3%] Built target image_processing_msgs__cpp
+[2.155s] [  5%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[2.155s] [  7%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[2.158s] [  9%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[2.169s] [ 10%] [32mBuilding C object CMakeFiles/image_processing_msgs__rosidl_generator_c.dir/rosidl_generator_c/image_processing_msgs/msg/detail/detection__functions.c.o[0m
+[2.170s] [ 12%] [32mBuilding C object CMakeFiles/image_processing_msgs__rosidl_generator_c.dir/rosidl_generator_c/image_processing_msgs/msg/detail/detection_array__functions.c.o[0m
+[2.170s] [ 14%] [32mBuilding C object CMakeFiles/image_processing_msgs__rosidl_generator_c.dir/rosidl_generator_c/image_processing_msgs/msg/detail/prominent_object_array__functions.c.o[0m
+[2.172s] [ 16%] [32mBuilding C object CMakeFiles/image_processing_msgs__rosidl_generator_c.dir/rosidl_generator_c/image_processing_msgs/msg/detail/prominent_object__functions.c.o[0m
+[2.225s] [ 18%] [32m[1mLinking C shared library libimage_processing_msgs__rosidl_generator_c.so[0m
+[2.259s] [ 18%] Built target image_processing_msgs__rosidl_generator_c
+[2.269s] [ 20%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[2.270s] [ 21%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[2.272s] [ 23%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[2.440s] [ 25%] [32mBuilding CXX object CMakeFiles/image_processing_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/image_processing_msgs/msg/prominent_object_array__type_support.cpp.o[0m
+[2.440s] [ 27%] [32mBuilding CXX object CMakeFiles/image_processing_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/image_processing_msgs/msg/detection_array__type_support.cpp.o[0m
+[2.440s] [ 29%] [32mBuilding CXX object CMakeFiles/image_processing_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/image_processing_msgs/msg/detection__type_support.cpp.o[0m
+[2.440s] [ 30%] [32mBuilding CXX object CMakeFiles/image_processing_msgs__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/image_processing_msgs/msg/prominent_object__type_support.cpp.o[0m
+[2.592s] [ 34%] [32mBuilding CXX object CMakeFiles/image_processing_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/image_processing_msgs/msg/detail/dds_fastrtps/detection_array__type_support.cpp.o[0m
+[2.592s] [ 34%] [32mBuilding CXX object CMakeFiles/image_processing_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/image_processing_msgs/msg/detail/dds_fastrtps/detection__type_support.cpp.o[0m
+[2.600s] [ 36%] [32mBuilding CXX object CMakeFiles/image_processing_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/image_processing_msgs/msg/detail/dds_fastrtps/prominent_object_array__type_support.cpp.o[0m
+[2.600s] [ 38%] [32mBuilding CXX object CMakeFiles/image_processing_msgs__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/image_processing_msgs/msg/detail/dds_fastrtps/prominent_object__type_support.cpp.o[0m
+[2.615s] [ 40%] [32mBuilding CXX object CMakeFiles/image_processing_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/image_processing_msgs/msg/detail/detection__type_support.cpp.o[0m
+[2.688s] [ 41%] [32mBuilding CXX object CMakeFiles/image_processing_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/image_processing_msgs/msg/detection__type_support.cpp.o[0m
+[2.740s] [ 43%] [32mBuilding CXX object CMakeFiles/image_processing_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/image_processing_msgs/msg/detail/detection_array__type_support.cpp.o[0m
+[2.747s] [ 45%] [32mBuilding CXX object CMakeFiles/image_processing_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/image_processing_msgs/msg/detection_array__type_support.cpp.o[0m
+[2.759s] [ 47%] [32mBuilding CXX object CMakeFiles/image_processing_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/image_processing_msgs/msg/prominent_object__type_support.cpp.o[0m
+[2.761s] [ 49%] [32mBuilding CXX object CMakeFiles/image_processing_msgs__rosidl_typesupport_c.dir/rosidl_typesupport_c/image_processing_msgs/msg/prominent_object_array__type_support.cpp.o[0m
+[2.773s] [ 50%] [32mBuilding CXX object CMakeFiles/image_processing_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/image_processing_msgs/msg/detail/detection__type_support_c.cpp.o[0m
+[2.773s] [ 52%] [32m[1mLinking CXX shared library libimage_processing_msgs__rosidl_typesupport_cpp.so[0m
+[2.791s] [ 54%] [32mBuilding CXX object CMakeFiles/image_processing_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/image_processing_msgs/msg/detail/detection_array__type_support_c.cpp.o[0m
+[2.800s] [ 56%] [32mBuilding CXX object CMakeFiles/image_processing_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/image_processing_msgs/msg/detail/prominent_object__type_support_c.cpp.o[0m
+[2.818s] [ 58%] [32m[1mLinking CXX shared library libimage_processing_msgs__rosidl_typesupport_c.so[0m
+[2.825s] [ 58%] Built target image_processing_msgs__rosidl_typesupport_cpp
+[2.841s] [ 60%] [32mBuilding C object CMakeFiles/image_processing_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/image_processing_msgs/msg/detail/detection__type_support.c.o[0m
+[2.841s] [ 61%] [32mBuilding CXX object CMakeFiles/image_processing_msgs__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/image_processing_msgs/msg/detail/prominent_object_array__type_support_c.cpp.o[0m
+[2.892s] [ 63%] [32mBuilding C object CMakeFiles/image_processing_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/image_processing_msgs/msg/detail/detection_array__type_support.c.o[0m
+[2.912s] [ 63%] Built target image_processing_msgs__rosidl_typesupport_c
+[2.952s] [ 65%] [32mBuilding C object CMakeFiles/image_processing_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/image_processing_msgs/msg/detail/prominent_object__type_support.c.o[0m
+[2.964s] [ 67%] [32mBuilding C object CMakeFiles/image_processing_msgs__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/image_processing_msgs/msg/detail/prominent_object_array__type_support.c.o[0m
+[3.069s] [ 69%] [32mBuilding CXX object CMakeFiles/image_processing_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/image_processing_msgs/msg/detail/prominent_object__type_support.cpp.o[0m
+[3.077s] [ 70%] [32m[1mLinking C shared library libimage_processing_msgs__rosidl_typesupport_introspection_c.so[0m
+[3.106s] [ 72%] [32mBuilding CXX object CMakeFiles/image_processing_msgs__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/image_processing_msgs/msg/detail/prominent_object_array__type_support.cpp.o[0m
+[3.138s] [ 72%] Built target image_processing_msgs__rosidl_typesupport_introspection_c
+[3.151s] [ 74%] [32m[1mLinking CXX shared library libimage_processing_msgs__rosidl_typesupport_fastrtps_cpp.so[0m
+[3.234s] [ 76%] [32m[1mLinking CXX shared library libimage_processing_msgs__rosidl_typesupport_fastrtps_c.so[0m
+[3.234s] [ 76%] Built target image_processing_msgs__rosidl_typesupport_fastrtps_cpp
+[3.301s] [ 76%] Built target image_processing_msgs__rosidl_typesupport_fastrtps_c
+[3.471s] [ 78%] [32m[1mLinking CXX shared library libimage_processing_msgs__rosidl_typesupport_introspection_cpp.so[0m
+[3.545s] [ 78%] Built target image_processing_msgs__rosidl_typesupport_introspection_cpp
+[3.564s] [ 78%] Built target image_processing_msgs
+[3.584s] [ 80%] [34m[1mGenerating Python code for ROS interfaces[0m
+[4.192s] [ 80%] Built target image_processing_msgs__py
+[4.213s] [ 81%] [32mBuilding C object CMakeFiles/image_processing_msgs__rosidl_generator_py.dir/rosidl_generator_py/image_processing_msgs/msg/_detection_array_s.c.o[0m
+[4.213s] [ 85%] [32mBuilding C object CMakeFiles/image_processing_msgs__rosidl_generator_py.dir/rosidl_generator_py/image_processing_msgs/msg/_prominent_object_s.c.o[0m
+[4.213s] [ 85%] [32mBuilding C object CMakeFiles/image_processing_msgs__rosidl_generator_py.dir/rosidl_generator_py/image_processing_msgs/msg/_detection_s.c.o[0m
+[4.216s] [ 87%] [32mBuilding C object CMakeFiles/image_processing_msgs__rosidl_generator_py.dir/rosidl_generator_py/image_processing_msgs/msg/_prominent_object_array_s.c.o[0m
+[4.346s] [ 89%] [32m[1mLinking C shared library rosidl_generator_py/image_processing_msgs/libimage_processing_msgs__rosidl_generator_py.so[0m
+[4.387s] [ 89%] Built target image_processing_msgs__rosidl_generator_py
+[4.408s] [ 90%] [32mBuilding C object CMakeFiles/image_processing_msgs__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/image_processing_msgs/_image_processing_msgs_s.ep.rosidl_typesupport_c.c.o[0m
+[4.409s] [ 94%] [32mBuilding C object CMakeFiles/image_processing_msgs__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/image_processing_msgs/_image_processing_msgs_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[4.409s] [ 94%] [32mBuilding C object CMakeFiles/image_processing_msgs__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/image_processing_msgs/_image_processing_msgs_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[4.510s] [ 96%] [32m[1mLinking C shared library rosidl_generator_py/image_processing_msgs/image_processing_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so[0m
+[4.512s] [ 98%] [32m[1mLinking C shared library rosidl_generator_py/image_processing_msgs/image_processing_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so[0m
+[4.529s] [100%] [32m[1mLinking C shared library rosidl_generator_py/image_processing_msgs/image_processing_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so[0m
+[4.553s] [100%] Built target image_processing_msgs__rosidl_typesupport_fastrtps_c__pyext
+[4.554s] [100%] Built target image_processing_msgs__rosidl_typesupport_introspection_c__pyext
+[4.570s] [100%] Built target image_processing_msgs__rosidl_typesupport_c__pyext
+[4.583s] Invoked command in '/home/cjabrantes/ros2_px4_offboard_example_ws/build/image_processing_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/cjabrantes/ros2_px4_offboard_example_ws/install/px4_offboard:/home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing:/opt/ros/humble /usr/bin/cmake --build /home/cjabrantes/ros2_px4_offboard_example_ws/build/image_processing_msgs -- -j12 -l12
+[4.593s] Invoking command in '/home/cjabrantes/ros2_px4_offboard_example_ws/build/image_processing_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/cjabrantes/ros2_px4_offboard_example_ws/install/px4_offboard:/home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing:/opt/ros/humble /usr/bin/cmake --install /home/cjabrantes/ros2_px4_offboard_example_ws/build/image_processing_msgs
+[4.600s] -- Install configuration: ""
+[4.601s] -- Execute custom install script
+[4.601s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/ament_index/resource_index/rosidl_interfaces/image_processing_msgs
+[4.610s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/detection__functions.h
+[4.619s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/detection__struct.h
+[4.630s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/detection__type_support.h
+[4.639s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/detection_array__functions.h
+[4.647s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/detection_array__struct.h
+[4.656s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/detection_array__type_support.h
+[4.665s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/prominent_object__functions.h
+[4.674s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/prominent_object__struct.h
+[4.682s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/prominent_object__type_support.h
+[4.690s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/prominent_object_array__functions.h
+[4.698s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/prominent_object_array__struct.h
+[4.706s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/prominent_object_array__type_support.h
+[4.714s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detection.h
+[4.722s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detection_array.h
+[4.730s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/prominent_object.h
+[4.738s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/prominent_object_array.h
+[4.746s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/rosidl_generator_c__visibility_control.h
+[4.754s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/environment/library_path.sh
+[4.761s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/environment/library_path.dsv
+[4.769s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/detection__rosidl_typesupport_fastrtps_c.h
+[4.777s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/detection_array__rosidl_typesupport_fastrtps_c.h
+[4.784s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/prominent_object__rosidl_typesupport_fastrtps_c.h
+[4.792s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/prominent_object_array__rosidl_typesupport_fastrtps_c.h
+[4.803s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[4.812s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/detection__builder.hpp
+[4.823s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/detection__struct.hpp
+[4.833s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/detection__traits.hpp
+[4.845s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/detection__type_support.hpp
+[4.855s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/detection_array__builder.hpp
+[4.866s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/detection_array__struct.hpp
+[4.876s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/detection_array__traits.hpp
+[4.887s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/detection_array__type_support.hpp
+[4.898s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/prominent_object__builder.hpp
+[4.908s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/prominent_object__struct.hpp
+[4.919s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/prominent_object__traits.hpp
+[4.930s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/prominent_object__type_support.hpp
+[4.941s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/prominent_object_array__builder.hpp
+[4.952s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/prominent_object_array__struct.hpp
+[4.962s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/prominent_object_array__traits.hpp
+[4.973s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/prominent_object_array__type_support.hpp
+[4.984s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detection.hpp
+[4.992s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detection_array.hpp
+[5.003s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/prominent_object.hpp
+[5.014s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/prominent_object_array.hpp
+[5.024s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/rosidl_generator_cpp__visibility_control.hpp
+[5.034s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/detection__rosidl_typesupport_fastrtps_cpp.hpp
+[5.046s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/detection_array__rosidl_typesupport_fastrtps_cpp.hpp
+[5.057s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/prominent_object__rosidl_typesupport_fastrtps_cpp.hpp
+[5.069s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/prominent_object_array__rosidl_typesupport_fastrtps_cpp.hpp
+[5.081s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[5.092s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/detection__rosidl_typesupport_introspection_c.h
+[5.103s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/detection_array__rosidl_typesupport_introspection_c.h
+[5.114s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/prominent_object__rosidl_typesupport_introspection_c.h
+[5.125s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/prominent_object_array__rosidl_typesupport_introspection_c.h
+[5.136s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[5.147s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/detection__rosidl_typesupport_introspection_cpp.hpp
+[5.158s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/detection_array__rosidl_typesupport_introspection_cpp.hpp
+[5.169s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/prominent_object__rosidl_typesupport_introspection_cpp.hpp
+[5.176s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/include/image_processing_msgs/image_processing_msgs/msg/detail/prominent_object_array__rosidl_typesupport_introspection_cpp.hpp
+[5.184s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/environment/pythonpath.sh
+[5.192s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/environment/pythonpath.dsv
+[5.200s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/local/lib/python3.10/dist-packages/image_processing_msgs-0.0.0-py3.10.egg-info/PKG-INFO
+[5.208s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/local/lib/python3.10/dist-packages/image_processing_msgs-0.0.0-py3.10.egg-info/SOURCES.txt
+[5.219s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/local/lib/python3.10/dist-packages/image_processing_msgs-0.0.0-py3.10.egg-info/dependency_links.txt
+[5.227s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/local/lib/python3.10/dist-packages/image_processing_msgs-0.0.0-py3.10.egg-info/top_level.txt
+[5.240s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/local/lib/python3.10/dist-packages/image_processing_msgs/__init__.py
+[5.250s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/local/lib/python3.10/dist-packages/image_processing_msgs/_image_processing_msgs_s.ep.rosidl_typesupport_c.c
+[5.261s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/local/lib/python3.10/dist-packages/image_processing_msgs/_image_processing_msgs_s.ep.rosidl_typesupport_fastrtps_c.c
+[5.272s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/local/lib/python3.10/dist-packages/image_processing_msgs/_image_processing_msgs_s.ep.rosidl_typesupport_introspection_c.c
+[5.282s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/local/lib/python3.10/dist-packages/image_processing_msgs/image_processing_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[5.293s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/local/lib/python3.10/dist-packages/image_processing_msgs/image_processing_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[5.304s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/local/lib/python3.10/dist-packages/image_processing_msgs/image_processing_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[5.314s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/local/lib/python3.10/dist-packages/image_processing_msgs/libimage_processing_msgs__rosidl_generator_py.so
+[5.325s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/local/lib/python3.10/dist-packages/image_processing_msgs/msg/__init__.py
+[5.336s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/local/lib/python3.10/dist-packages/image_processing_msgs/msg/_detection.py
+[5.347s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/local/lib/python3.10/dist-packages/image_processing_msgs/msg/_detection_array.py
+[5.358s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/local/lib/python3.10/dist-packages/image_processing_msgs/msg/_detection_array_s.c
+[5.368s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/local/lib/python3.10/dist-packages/image_processing_msgs/msg/_detection_s.c
+[5.379s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/local/lib/python3.10/dist-packages/image_processing_msgs/msg/_prominent_object.py
+[5.390s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/local/lib/python3.10/dist-packages/image_processing_msgs/msg/_prominent_object_array.py
+[5.401s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/local/lib/python3.10/dist-packages/image_processing_msgs/msg/_prominent_object_array_s.c
+[5.412s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/local/lib/python3.10/dist-packages/image_processing_msgs/msg/_prominent_object_s.c
+[5.423s] -- Up-to-date symlink: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/local/lib/python3.10/dist-packages/image_processing_msgs/image_processing_msgs_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[5.423s] -- Up-to-date symlink: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/local/lib/python3.10/dist-packages/image_processing_msgs/image_processing_msgs_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[5.423s] -- Up-to-date symlink: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/local/lib/python3.10/dist-packages/image_processing_msgs/image_processing_msgs_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[5.424s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/msg/Detection.idl
+[5.435s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/msg/DetectionArray.idl
+[5.445s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/msg/ProminentObject.idl
+[5.456s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/msg/ProminentObjectArray.idl
+[5.466s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/msg/Detection.msg
+[5.477s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/msg/DetectionArray.msg
+[5.488s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/msg/ProminentObject.msg
+[5.499s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/msg/ProminentObjectArray.msg
+[5.509s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/ament_index/resource_index/package_run_dependencies/image_processing_msgs
+[5.520s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/ament_index/resource_index/parent_prefix_path/image_processing_msgs
+[5.531s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/environment/ament_prefix_path.sh
+[5.542s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/environment/ament_prefix_path.dsv
+[5.554s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/environment/path.sh
+[5.566s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/environment/path.dsv
+[5.577s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/local_setup.bash
+[5.589s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/local_setup.sh
+[5.599s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/local_setup.zsh
+[5.610s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/local_setup.dsv
+[5.618s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/package.dsv
+[5.626s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/ament_index/resource_index/packages/image_processing_msgs
+[5.637s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/cmake/rosidl_cmake-extras.cmake
+[5.648s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/cmake/ament_cmake_export_dependencies-extras.cmake
+[5.659s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/cmake/ament_cmake_export_include_directories-extras.cmake
+[5.670s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/cmake/ament_cmake_export_libraries-extras.cmake
+[5.682s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/cmake/ament_cmake_export_targets-extras.cmake
+[5.693s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[5.703s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[5.715s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/cmake/image_processing_msgsConfig.cmake
+[5.726s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/cmake/image_processing_msgsConfig-version.cmake
+[5.736s] -- Symlinking: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/package.xml
+[5.747s] -- Installing: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/lib/libimage_processing_msgs__rosidl_generator_c.so
+[5.747s] -- Set runtime path of "/home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/lib/libimage_processing_msgs__rosidl_generator_c.so" to ""
+[5.748s] -- Installing: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/lib/libimage_processing_msgs__rosidl_typesupport_fastrtps_c.so
+[5.748s] -- Set runtime path of "/home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/lib/libimage_processing_msgs__rosidl_typesupport_fastrtps_c.so" to ""
+[5.748s] -- Installing: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/lib/libimage_processing_msgs__rosidl_typesupport_fastrtps_cpp.so
+[5.749s] -- Set runtime path of "/home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/lib/libimage_processing_msgs__rosidl_typesupport_fastrtps_cpp.so" to ""
+[5.749s] -- Installing: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/lib/libimage_processing_msgs__rosidl_typesupport_introspection_c.so
+[5.749s] -- Set runtime path of "/home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/lib/libimage_processing_msgs__rosidl_typesupport_introspection_c.so" to ""
+[5.749s] -- Installing: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/lib/libimage_processing_msgs__rosidl_typesupport_c.so
+[5.750s] -- Set runtime path of "/home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/lib/libimage_processing_msgs__rosidl_typesupport_c.so" to ""
+[5.750s] -- Installing: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/lib/libimage_processing_msgs__rosidl_typesupport_introspection_cpp.so
+[5.750s] -- Set runtime path of "/home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/lib/libimage_processing_msgs__rosidl_typesupport_introspection_cpp.so" to ""
+[5.750s] -- Installing: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/lib/libimage_processing_msgs__rosidl_typesupport_cpp.so
+[5.751s] -- Set runtime path of "/home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/lib/libimage_processing_msgs__rosidl_typesupport_cpp.so" to ""
+[5.787s] Listing '/home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/local/lib/python3.10/dist-packages/image_processing_msgs'...
+[5.787s] Compiling '/home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/local/lib/python3.10/dist-packages/image_processing_msgs/__init__.py'...
+[5.787s] Listing '/home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/local/lib/python3.10/dist-packages/image_processing_msgs/msg'...
+[5.787s] Compiling '/home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/local/lib/python3.10/dist-packages/image_processing_msgs/msg/__init__.py'...
+[5.787s] Compiling '/home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/local/lib/python3.10/dist-packages/image_processing_msgs/msg/_detection.py'...
+[5.787s] Compiling '/home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/local/lib/python3.10/dist-packages/image_processing_msgs/msg/_detection_array.py'...
+[5.788s] Compiling '/home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/local/lib/python3.10/dist-packages/image_processing_msgs/msg/_prominent_object.py'...
+[5.788s] Compiling '/home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/local/lib/python3.10/dist-packages/image_processing_msgs/msg/_prominent_object_array.py'...
+[5.791s] -- Installing: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/lib/libimage_processing_msgs__rosidl_generator_py.so
+[5.791s] -- Set runtime path of "/home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/lib/libimage_processing_msgs__rosidl_generator_py.so" to ""
+[5.792s] -- Installing: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/cmake/export_image_processing_msgs__rosidl_generator_cExport.cmake
+[5.792s] -- Installing: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/cmake/export_image_processing_msgs__rosidl_generator_cExport-noconfig.cmake
+[5.792s] -- Installing: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/cmake/export_image_processing_msgs__rosidl_typesupport_fastrtps_cExport.cmake
+[5.793s] -- Installing: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/cmake/export_image_processing_msgs__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[5.793s] -- Installing: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/cmake/export_image_processing_msgs__rosidl_generator_cppExport.cmake
+[5.793s] -- Installing: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/cmake/export_image_processing_msgs__rosidl_typesupport_fastrtps_cppExport.cmake
+[5.793s] -- Installing: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/cmake/export_image_processing_msgs__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[5.794s] -- Installing: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/cmake/image_processing_msgs__rosidl_typesupport_introspection_cExport.cmake
+[5.794s] -- Installing: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/cmake/image_processing_msgs__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[5.794s] -- Installing: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/cmake/image_processing_msgs__rosidl_typesupport_cExport.cmake
+[5.795s] -- Installing: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/cmake/image_processing_msgs__rosidl_typesupport_cExport-noconfig.cmake
+[5.795s] -- Installing: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/cmake/image_processing_msgs__rosidl_typesupport_introspection_cppExport.cmake
+[5.795s] -- Installing: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/cmake/image_processing_msgs__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[5.796s] -- Installing: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/cmake/image_processing_msgs__rosidl_typesupport_cppExport.cmake
+[5.796s] -- Installing: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/cmake/image_processing_msgs__rosidl_typesupport_cppExport-noconfig.cmake
+[5.796s] -- Installing: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/cmake/export_image_processing_msgs__rosidl_generator_pyExport.cmake
+[5.797s] -- Installing: /home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing_msgs/share/image_processing_msgs/cmake/export_image_processing_msgs__rosidl_generator_pyExport-noconfig.cmake
+[5.801s] Invoked command in '/home/cjabrantes/ros2_px4_offboard_example_ws/build/image_processing_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/cjabrantes/ros2_px4_offboard_example_ws/install/px4_offboard:/home/cjabrantes/ros2_px4_offboard_example_ws/install/image_processing:/opt/ros/humble /usr/bin/cmake --install /home/cjabrantes/ros2_px4_offboard_example_ws/build/image_processing_msgs

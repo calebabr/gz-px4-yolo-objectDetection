@@ -1,0 +1,1 @@
+/home/cjabrantes/ros2_px4_offboard_example_ws/build/px4_msgs/rosidl_generator_cpp/px4_msgs/msg/detail/mag_worker_data__type_support.hpp

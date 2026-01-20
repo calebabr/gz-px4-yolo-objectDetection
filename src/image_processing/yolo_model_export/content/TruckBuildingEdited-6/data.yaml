@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 5
+names: ['Building', 'Car', 'Forest', 'Person', 'Truck']
+
+roboflow:
+  workspace: drone-research
+  project: truckbuildingedited
+  version: 6
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/drone-research/truckbuildingedited/dataset/6

@@ -1,0 +1,1 @@
+/home/cjabrantes/ros2_px4_offboard_example_ws/build/px4_msgs/rosidl_generator_c/px4_msgs/srv/detail/vehicle_command__struct.h

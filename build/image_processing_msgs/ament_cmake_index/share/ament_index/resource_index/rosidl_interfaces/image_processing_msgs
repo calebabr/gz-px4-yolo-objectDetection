@@ -1,0 +1,8 @@
+msg/Detection.idl
+msg/Detection.msg
+msg/DetectionArray.idl
+msg/DetectionArray.msg
+msg/ProminentObject.idl
+msg/ProminentObject.msg
+msg/ProminentObjectArray.idl
+msg/ProminentObjectArray.msg
