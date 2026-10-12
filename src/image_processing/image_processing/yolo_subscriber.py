@@ -52,7 +52,7 @@ class YoloSubscriber(Node):
                 # self.detection_pub.publish(String(data=detected_str))  # <-- Publish detections
                 # self.get_logger().info(f'Detected: {detected_str}')
 
-            # Publish Array 
+            # Publish Array
             detection_array = DetectionArray()
             for box in results[0].boxes:
                 det = Detection()

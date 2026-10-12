@@ -48,8 +48,8 @@ class BehaviorController(Node):
         self.drone_pos = np.array([0.0, 0.0, 0.0])
         self.history = deque(maxlen=5)
 
-        self.frame_count = 0  
-        self.log_every_n_frames = 5  # Adjust to 5–10 
+        self.frame_count = 0
+        self.log_every_n_frames = 5  # Adjust to 5–10
 
         # Parameters
         self.declare_parameter('sigmoid_k', 5.0)
@@ -68,7 +68,7 @@ class BehaviorController(Node):
         conf_weights = [0.7, 0.6, 0.5, 0.4, 0.3]
         area_weights = [0.3, 0.4, 0.5, 0.6, 0.7]
 
-        conf_area_pairs = list(zip(conf_weights, area_weights))  
+        conf_area_pairs = list(zip(conf_weights, area_weights))
 
         self.param_grid = [(k, x0, conf, area) 
                    for k in k_values 
@@ -158,7 +158,7 @@ class BehaviorController(Node):
             self.get_logger().warn("No detections received.")
             return
         
-        k, x0, conf_weight, area_weight = 15, 0.5, 0.6, 0.4
+        k, x0, conf_weight, area_weight = 15, 0.67, 0.5, 0.5
 
         # conf_weight = self.get_parameter('conf_weight').get_parameter_value().double_value
         # area_weight = self.get_parameter('area_weight').get_parameter_value().double_value
