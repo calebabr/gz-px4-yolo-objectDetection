@@ -71,7 +71,7 @@ def test_answer_question_uses_injected_caller_and_passes_messages():
     text, source = logic.answer_question('q', 'friendly_guide', STATE, DETECTIONS, b'jpg', 'k', 'gpt-test', caller=fake)
     assert (text, source) == ('I see one person.', 'openai')
     assert seen['key'] == 'k' and seen['model'] == 'gpt-test'
-    assert seen['messages'][0]['content'] == logic.PERSONAS['friendly_guide']
+    assert seen['messages'][0]['content'].startswith(logic.PERSONAS['friendly_guide'])
 
 
 def test_answer_question_turns_model_errors_into_a_player_message():
@@ -131,3 +131,51 @@ def test_call_openai_network_error_and_bad_reply(monkeypatch):
     monkeypatch.setattr(logic.urllib.request, 'urlopen', lambda request, timeout: _Response({'nope': 1}))
     with pytest.raises(logic.CopilotError):
         logic.call_openai([], 'k')
+
+
+# ---- explanation detail (T1 brief / T2 standard / T3 full) ----
+
+def test_detail_instruction_per_level_and_unknown_falls_back_to_standard():
+    assert 'no numbers' in logic.detail_instruction('brief')
+    assert 'reasoning' in logic.detail_instruction('full')
+    assert logic.detail_instruction('standard') == logic.DETAIL_INSTRUCTIONS['standard']
+    assert logic.detail_instruction('nonsense') == logic.DETAIL_INSTRUCTIONS['standard']
+    assert logic.detail_instruction(None) == logic.DETAIL_INSTRUCTIONS['standard']
+
+
+def test_system_prompt_combines_persona_and_detail():
+    brief = logic.build_messages('q', 'default', STATE, DETECTIONS, detail='brief')[0]['content']
+    full = logic.build_messages('q', 'default', STATE, DETECTIONS, detail='full')[0]['content']
+    assert brief.startswith(logic.PERSONAS['default']) and 'no numbers' in brief
+    assert full.startswith(logic.PERSONAS['default']) and 'reasoning' in full
+    assert brief != full
+
+
+def test_mock_answer_brief_has_class_names_but_no_confidence_or_counts():
+    text = logic.mock_answer('q', STATE, DETECTIONS, detail='brief')
+    assert 'person' in text and '%' not in text and 'of 8' not in text
+
+
+def test_mock_answer_standard_is_unchanged_and_full_adds_reasoning():
+    standard = logic.mock_answer('q', STATE, DETECTIONS)
+    assert standard == logic.mock_answer('q', STATE, DETECTIONS, detail='standard')
+    assert '2 of 8' in standard and 'Reasoning' not in standard
+    full = logic.mock_answer('q', STATE, DETECTIONS, detail='full')
+    assert full.startswith(standard) and 'Reasoning' in full and '40%' in full
+
+
+def test_mock_answer_brief_with_no_detections():
+    assert 'nothing yet' in logic.mock_answer('q', STATE, [], detail='brief')
+
+
+def test_answer_question_passes_the_detail_through():
+    seen = {}
+
+    def fake(messages, api_key, model, timeout):
+        seen['system'] = messages[0]['content']
+        return 'ok'
+
+    logic.answer_question('q', 'default', STATE, DETECTIONS, None, 'k', 'm', caller=fake, detail='full')
+    assert 'reasoning' in seen['system']
+    text, source = logic.answer_question('q', 'default', STATE, DETECTIONS, None, '', 'm', mock=True, detail='brief')
+    assert source == 'mock' and '%' not in text

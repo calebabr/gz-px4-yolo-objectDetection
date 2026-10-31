@@ -20,12 +20,25 @@ PERSONAS = {
 }
 
 
+# T1 = brief, T2 = standard, T3 = full (set by Unity from the AI condition; T0 never calls the copilot).
+DETAIL_INSTRUCTIONS = {
+    'brief': 'Keep it to one short sentence. Give only the recommendation: no numbers and no reasoning.',
+    'standard': 'Answer in one or two sentences. Include a distance or a confidence only when it helps.',
+    'full': ('Answer in up to four sentences. Explain your reasoning, say how confident the detections are '
+             'and what you are unsure about.'),
+}
+
+
 class CopilotError(Exception):
     """Raised when the language-model call fails. The message is safe to show to the player."""
 
 
 def persona_prompt(persona_id):
     return PERSONAS.get(persona_id or 'default', PERSONAS['default'])
+
+
+def detail_instruction(detail):
+    return DETAIL_INSTRUCTIONS.get(detail or 'standard', DETAIL_INSTRUCTIONS['standard'])
 
 
 def summarize_detections(detections):
@@ -41,8 +54,8 @@ def summarize_detections(detections):
     return ', '.join(parts)
 
 
-def build_messages(question, persona_id, state, detections, image_jpeg=None):
-    """Chat-completion messages: persona as system prompt, grounded context + question (+ camera frame) as user."""
+def build_messages(question, persona_id, state, detections, image_jpeg=None, detail='standard'):
+    """Chat-completion messages: persona + detail level as system prompt, grounded context + question (+ camera frame) as user."""
     context = 'Game state: %s\nDetections: %s' % (
         json.dumps(state or {}, sort_keys=True), summarize_detections(detections))
     content = [{'type': 'text', 'text': context + '\nPlayer question: ' + question}]
@@ -50,21 +63,29 @@ def build_messages(question, persona_id, state, detections, image_jpeg=None):
         encoded = base64.b64encode(image_jpeg).decode('ascii')
         content.append({'type': 'image_url', 'image_url': {'url': 'data:image/jpeg;base64,' + encoded}})
     return [
-        {'role': 'system', 'content': persona_prompt(persona_id)},
+        {'role': 'system', 'content': persona_prompt(persona_id) + ' ' + detail_instruction(detail)},
         {'role': 'user', 'content': content},
     ]
 
 
-def mock_answer(question, state, detections):
+def mock_answer(question, state, detections, detail='standard'):
     """Deterministic stand-in used for tests and offline demos. Grounded in the same inputs as the real call."""
     state = state or {}
     found = state.get('found', '?')
     total = state.get('total', '?')
+    if detail == 'brief':
+        names = sorted({d.get('class_name', '?') for d in (detections or [])})
+        return 'Mock copilot: I see %s.' % (', '.join(names) if names else 'nothing yet')
+
     answer = 'Mock copilot: I see %s.' % summarize_detections(detections)
     answer += ' You have found %s of %s' % (found, total)
     if 'timeRemaining' in state:
         answer += ' with %d seconds left' % int(float(state['timeRemaining']))
-    return answer + '.'
+    answer += '.'
+    if detail == 'full':
+        answer += (' Reasoning: these come from the camera frame and the YOLO detector; '
+                   'anything under 40% confidence deserves a second look.')
+    return answer
 
 
 def call_openai(messages, api_key, model=DEFAULT_MODEL, timeout=20.0, url=API_URL):
@@ -96,14 +117,14 @@ def call_openai(messages, api_key, model=DEFAULT_MODEL, timeout=20.0, url=API_UR
 
 
 def answer_question(question, persona_id, state, detections, image_jpeg, api_key, model,
-                    mock=False, timeout=20.0, caller=call_openai):
+                    mock=False, timeout=20.0, caller=call_openai, detail='standard'):
     """Returns (text, source) where source is 'mock', 'offline', 'openai' or 'error'."""
     if mock:
-        return mock_answer(question, state, detections), 'mock'
+        return mock_answer(question, state, detections, detail), 'mock'
     if not api_key:
         return 'Copilot offline: no OpenAI key is set on the ROS machine.', 'offline'
     try:
-        messages = build_messages(question, persona_id, state, detections, image_jpeg)
+        messages = build_messages(question, persona_id, state, detections, image_jpeg, detail)
         return caller(messages, api_key, model, timeout), 'openai'
     except CopilotError as error:
         return 'Copilot error: %s' % error, 'error'

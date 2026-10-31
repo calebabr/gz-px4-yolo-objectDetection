@@ -64,10 +64,10 @@ class CopilotBridge(Node):
         except (ValueError, KeyError, TypeError):
             self.get_logger().warn('Ignoring malformed /copilot/question')
             return
-        threading.Thread(target=self.answer, args=(request.get('id', ''), question, request.get('persona', 'default')),
+        threading.Thread(target=self.answer, args=(request.get('id', ''), question, request.get('persona', 'default'), request.get('detail', 'standard')),
                          daemon=True).start()
 
-    def answer(self, request_id, question, persona):
+    def answer(self, request_id, question, persona, detail='standard'):
         with self.lock:
             state = dict(self.state)
             detections = list(self.detections)
@@ -78,7 +78,8 @@ class CopilotBridge(Node):
             question, persona, state, detections, image, api_key,
             self.get_parameter('model').value,
             mock=self.get_parameter('mock').value,
-            timeout=float(self.get_parameter('timeout_s').value))
+            timeout=float(self.get_parameter('timeout_s').value),
+            detail=detail)
 
         self.answer_pub.publish(String(data=json.dumps({'id': request_id, 'text': text, 'source': source})))
         self.get_logger().info('Answered question %s via %s' % (request_id, source))
