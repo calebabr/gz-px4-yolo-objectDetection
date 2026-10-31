@@ -9,7 +9,7 @@ source ~/ros2_px4_offboard_example_ws/install/setup.bash
 
 FAILED=0
 PIDS=()
-cleanup() { for p in "${PIDS[@]}"; do kill "$p" 2>/dev/null; done; }
+cleanup() { for p in "${PIDS[@]}"; do kill "$p" 2>/dev/null; done; pkill -f "image_processing/behavior_controller" 2>/dev/null; }
 trap cleanup EXIT
 
 # best detection (conf .95, area 2000) first, a weaker one last
@@ -20,7 +20,8 @@ run_node() {  # extra ros args
     NODE=$!; PIDS+=("$NODE")
     sleep 3
 }
-stop_node() { kill "$NODE" 2>/dev/null; wait "$NODE" 2>/dev/null; }
+# `ros2 run` leaves its child node alive when the wrapper is killed, so stop the node itself
+stop_node() { kill "$NODE" 2>/dev/null; pkill -f "image_processing/behavior_controller" 2>/dev/null; wait "$NODE" 2>/dev/null; sleep 1; }
 
 # --- R-3 (+ no crash without an image) ---
 run_node
