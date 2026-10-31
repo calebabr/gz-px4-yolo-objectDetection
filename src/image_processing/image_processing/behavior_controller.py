@@ -16,6 +16,7 @@ import itertools
 
 from sensor_msgs.msg import Image
 
+from image_processing import behavior_logic as logic
 
 
 def image_callback(self, msg: Image):
@@ -49,7 +50,8 @@ class BehaviorController(Node):
         self.history = deque(maxlen=5)
 
         self.frame_count = 0
-        self.log_every_n_frames = 5  # Adjust to 5–10
+        # R-4: process every detection frame by default; raise it to thin out the output (e.g. 5 = every 5th frame).
+        self.declare_parameter('log_every_n_frames', 1)
 
         # Parameters
         self.declare_parameter('sigmoid_k', 5.0)
@@ -151,49 +153,25 @@ class BehaviorController(Node):
     
     def callback(self, msg: DetectionArray):
         self.frame_count += 1
-        if self.frame_count % self.log_every_n_frames != 0:
-            return  # Only going to log every 1 to n frames
+        every_n = self.get_parameter('log_every_n_frames').get_parameter_value().integer_value
+        if not logic.should_process(self.frame_count, every_n):
+            return  # only process every n-th frame (1 = every frame)
         
         if not msg.detections:
             self.get_logger().warn("No detections received.")
             return
         
-        k, x0, conf_weight, area_weight = 15, 0.67, 0.5, 0.5
+        k, x0, conf_weight, area_weight = logic.SIGMOID_K, logic.SIGMOID_X0, logic.CONF_WEIGHT, logic.AREA_WEIGHT
 
         # conf_weight = self.get_parameter('conf_weight').get_parameter_value().double_value
         # area_weight = self.get_parameter('area_weight').get_parameter_value().double_value
         # k = self.get_parameter('sigmoid_k').get_parameter_value().double_value
         # x0 = self.get_parameter('sigmoid_x0').get_parameter_value().double_value
 
-        feature_list = []
-
-        areas, confs, class_names, valid_dets = [], [], [], []
-        for det in msg.detections:
-            if not getattr(det, "class_name", None):
-                continue
-            if det.confidence <= 0.0 or det.pixel_area <= 0.0:
-                continue
-            areas.append(det.pixel_area)
-            confs.append(det.confidence)
-            class_names.append(det.class_name)
-            valid_dets.append(det)
-
-        if not valid_dets:
+        valid_dets, scores, best_idx = logic.score_detections(msg.detections, k, x0, conf_weight, area_weight)
+        if best_idx is None:
             return
-
-        areas = np.array(areas, dtype=np.float32)
-        confs = np.array(confs, dtype=np.float32)
-        max_area = np.max(areas) if areas.size > 0 else 1.0
-
-        best_idx, best_score = None, -np.inf
-        for i, (area, conf) in enumerate(zip(areas, confs)):
-            norm_area = area / (max_area + 1e-6)
-            norm_conf = conf
-            w_conf = self.sigmoid(norm_conf, k, x0)
-            score = conf_weight * w_conf + area_weight * norm_area
-            if score > best_score:
-                best_score = score
-                best_idx = i
+        best_score = scores[best_idx]
 
         main = valid_dets[best_idx]
         self.history.append(main)
@@ -223,12 +201,7 @@ class BehaviorController(Node):
 
         # Publish array of all detections in custom format
         array_msg = ProminentObjectArray()
-        for det, area, conf in zip(valid_dets, areas, confs):
-            # recompute score for each detection
-            norm_area = det.pixel_area / (max_area + 1e-6)
-            w_conf = self.sigmoid(det.confidence, k, x0)
-            sc = conf_weight * w_conf + area_weight * norm_area
-
+        for det, sc in zip(valid_dets, scores):
             array_msg.objects.append(self.to_prominent_object_msg(det, sc))
 
         self.pub_prominent_array.publish(array_msg)
@@ -238,16 +211,8 @@ class BehaviorController(Node):
         #distance_xyz = np.linalg.norm(self.drone_pos - self.objects[0]["position"])
         #distance_xy = np.linalg.norm(self.drone_pos[:2] - self.objects[0]["position"][:2])
         
-        bbox_width = main.width
-        bbox_height = main.height
-        bbox_aspect_ratio = bbox_width / bbox_height if bbox_height > 0 else 0
-
-        center_x = main.x_center
-        center_y = main.y_center
-        center_x_diff = (center_x - (self.image_width / 2))
-        center_y_diff = center_y - (self.image_height / 2)
-        center_x_diff_norm = center_x_diff / (self.image_width / 2)
-        center_y_diff_norm = center_y_diff / (self.image_height / 2)
+        # None until the first /camera/image_raw arrives (previously this raised a TypeError)
+        centre_offset = logic.normalised_centre_offset(main, self.image_width, self.image_height)
 
         # with open(self.csv_file, "a", newline="") as f:
         #     writer = csv.writer(f)
@@ -268,20 +233,12 @@ class BehaviorController(Node):
         #     self.frame_count = 0
         #     self.next_params()
         
-        # Append features in order used by distance predictor
-        features = [
-            det.confidence,
-            det.pixel_area,
-            score,
-            bbox_width,
-            bbox_height,
-            bbox_aspect_ratio,
-        ]
-        feature_list.extend(features)  # flatten into a single list for Float32MultiArray
+        # Features in the order used by the distance predictor (R-3: describe the chosen detection, not a loop leftover)
+        feature_list = logic.build_features(main, best_score)
 
         # Publish as Float32MultiArray
         if feature_list:
-            out_msg = Float32MultiArray(data=feature_list)
+            out_msg = Float32MultiArray(data=[float(v) for v in feature_list])
             self.pub_features.publish(out_msg)
             self.get_logger().info(f"Published features for {len(msg.detections)} detections")
 
