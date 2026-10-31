@@ -54,36 +54,37 @@ else
 fi
 rm -f "$OUT"; stop_node
 
+# Publishes exactly 20 detection frames (after the node's subscription has matched) and counts the /yolo/features messages.
+count_features() {
+    local out; out=$(mktemp)
+    (timeout 14 ros2 topic echo /yolo/features std_msgs/msg/Float32MultiArray > "$out" 2>/dev/null) &
+    local echo_pid=$!
+    sleep 3   # let the echo subscriber start
+    ros2 topic pub --wait-matching-subscriptions 1 --times 20 -r 10 /yolo/detections image_processing_msgs/msg/DetectionArray "$DETECTIONS" > /dev/null 2>&1
+    sleep 2   # let the last messages arrive
+    kill "$echo_pid" 2>/dev/null; pkill -f "ros2 topic echo" 2>/dev/null
+    COUNT=$(grep -c "^---" "$out")
+    rm -f "$out"
+}
+
 # --- R-4: default processes every frame ---
 run_node
-COUNT_OUT=$(mktemp)
-(timeout 4 ros2 topic echo /yolo/features std_msgs/msg/Float32MultiArray > "$COUNT_OUT" 2>/dev/null) &
-ECHO=$!
-sleep 1
-timeout 3 ros2 topic pub -r 10 /yolo/detections image_processing_msgs/msg/DetectionArray "$DETECTIONS" > /dev/null 2>&1
-wait "$ECHO"
-N=$(grep -c "^---" "$COUNT_OUT")
-if [ "$N" -ge 18 ]; then
-    echo "PASS  R-4 default processes every frame ($N feature messages from ~30 detection frames)"
+count_features
+if [ "$COUNT" -ge 18 ] && [ "$COUNT" -le 20 ]; then
+    echo "PASS  R-4 default processes every frame ($COUNT feature messages from 20 detection frames)"
 else
-    echo "FAIL  R-4 default: only $N feature messages from ~30 detection frames (expected ~30)"; FAILED=1
+    echo "FAIL  R-4 default: $COUNT feature messages from 20 detection frames (expected 18-20)"; FAILED=1
 fi
-rm -f "$COUNT_OUT"; stop_node
+stop_node
 
 # --- R-4: the rate is a parameter ---
 run_node -p log_every_n_frames:=5
-COUNT_OUT=$(mktemp)
-(timeout 4 ros2 topic echo /yolo/features std_msgs/msg/Float32MultiArray > "$COUNT_OUT" 2>/dev/null) &
-ECHO=$!
-sleep 1
-timeout 3 ros2 topic pub -r 10 /yolo/detections image_processing_msgs/msg/DetectionArray "$DETECTIONS" > /dev/null 2>&1
-wait "$ECHO"
-N5=$(grep -c "^---" "$COUNT_OUT")
-if [ "$N5" -ge 3 ] && [ "$N5" -le 10 ]; then
-    echo "PASS  R-4 log_every_n_frames:=5 thins the output ($N5 feature messages)"
+count_features
+if [ "$COUNT" -ge 3 ] && [ "$COUNT" -le 4 ]; then
+    echo "PASS  R-4 log_every_n_frames:=5 thins the output ($COUNT feature messages from 20 detection frames)"
 else
-    echo "FAIL  R-4 parameter: $N5 feature messages with log_every_n_frames:=5 (expected about 6)"; FAILED=1
+    echo "FAIL  R-4 parameter: $COUNT feature messages from 20 detection frames (expected 4)"; FAILED=1
 fi
-rm -f "$COUNT_OUT"; stop_node
+stop_node
 
 exit $FAILED
