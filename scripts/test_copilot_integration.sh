@@ -9,11 +9,12 @@ source ~/ros2_px4_offboard_example_ws/install/setup.bash
 
 FAILED=0
 PIDS=()
-cleanup() { for p in "${PIDS[@]}"; do kill "$p" 2>/dev/null; done; }
+cleanup() { for p in "${PIDS[@]}"; do kill "$p" 2>/dev/null; done; pkill -f "image_processing/copilot_bridge" 2>/dev/null; }
 trap cleanup EXIT
 
 run_case() {
     local name="$1" expect_source="$2" expect_text="$3"; shift 3
+    pkill -f "image_processing/copilot_bridge" 2>/dev/null; sleep 1
     local out; out=$(mktemp)
 
     env -u OPENAI_API_KEY ros2 run image_processing copilot_bridge --ros-args "$@" > /tmp/copilot_bridge_test.log 2>&1 &
@@ -35,7 +36,8 @@ run_case() {
     else
         echo "FAIL  $name"; echo "  answer: $(cat "$out")"; FAILED=1
     fi
-    kill "$bridge" "$state" 2>/dev/null; wait "$bridge" "$state" 2>/dev/null
+    # `ros2 run` leaves its child node alive when the wrapper is killed, so stop the bridge itself between cases
+    kill "$bridge" "$state" 2>/dev/null; pkill -f "image_processing/copilot_bridge" 2>/dev/null; wait "$bridge" "$state" 2>/dev/null; sleep 1
     rm -f "$out"
 }
 
