@@ -26,21 +26,26 @@ stop_node() { kill "$NODE" 2>/dev/null; pkill -f "image_processing/behavior_cont
 # --- R-3 (+ no crash without an image) ---
 run_node
 OUT=$(mktemp)
-timeout 12 ros2 topic echo --once /yolo/features std_msgs/msg/Float32MultiArray > "$OUT" 2>/dev/null &
-ECHO=$!
-sleep 1
-ros2 topic pub -r 5 /yolo/detections image_processing_msgs/msg/DetectionArray "$DETECTIONS" > /dev/null 2>&1 &
-PUB=$!; PIDS+=("$PUB")
-wait "$ECHO"
-kill "$PUB" 2>/dev/null
+# The ROS CLI's discovery is occasionally slow, so allow a few attempts to receive the first features message.
+for ATTEMPT in 1 2 3; do
+    : > "$OUT"
+    timeout 15 ros2 topic echo --once /yolo/features std_msgs/msg/Float32MultiArray > "$OUT" 2>/dev/null &
+    ECHO=$!
+    sleep 2
+    ros2 topic pub -r 5 /yolo/detections image_processing_msgs/msg/DetectionArray "$DETECTIONS" > /dev/null 2>&1 &
+    PUB=$!; PIDS+=("$PUB")
+    wait "$ECHO"
+    kill "$PUB" 2>/dev/null
+    grep -q "^data:" "$OUT" && break
+done
 
 # data: [confidence, pixel_area, score, width, height, aspect]
 FIRST=$(grep -A1 "^data:" "$OUT" | tail -1 | tr -d ' -')
 SECOND=$(grep -A2 "^data:" "$OUT" | tail -1 | tr -d ' -')
 if [[ "$FIRST" == 0.9* ]] && [[ "$SECOND" == 2000* ]]; then
-    echo "PASS  R-3 features describe the chosen detection (conf $FIRST, area $SECOND)"
+    echo "PASS  R-3 features describe the chosen detection (conf $FIRST, area $SECOND, attempt $ATTEMPT)"
 else
-    echo "FAIL  R-3 features: conf='$FIRST' area='$SECOND' (expected 0.95 / 2000)"; cat "$OUT"; FAILED=1
+    echo "FAIL  R-3 features: conf='$FIRST' area='$SECOND' (expected 0.95 / 2000)"; cat "$OUT"; echo "--- node log:"; tail -5 /tmp/behavior_test.log; FAILED=1
 fi
 if grep -q "TypeError" /tmp/behavior_test.log; then
     echo "FAIL  node raised a TypeError before the first image"; FAILED=1
