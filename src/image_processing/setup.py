@@ -13,6 +13,7 @@ setup(
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
         (os.path.join('share', package_name, 'msg'), glob('msg/*.msg')), # message files
+        (os.path.join('share', package_name, 'launch'), glob('launch/*.launch.py')),
     ],
     install_requires=['setuptools', 'image_processing_msgs', 'opencv-python-headless<4.9', 'torch', 'torchvision', 'torchaudio', 'numpy<2'],
     zip_safe=True,

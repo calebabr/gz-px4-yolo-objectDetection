@@ -14,9 +14,11 @@ from image_processing_msgs.msg import Detection, DetectionArray
 class YoloSubscriber(Node):
     def __init__(self):
         super().__init__('yolo_subscriber')
+        self.declare_parameter('model_path', '/home/cjabrantes/ros2_px4_offboard_example_ws/src/image_processing/YOLOv8/best.pt')
+        self.declare_parameter('image_topic', '/camera/image_raw')
         self.subscription = self.create_subscription(
             Image,
-            '/camera/image_raw',
+            self.get_parameter('image_topic').value,
             self.listener_callback,
             10)
         self.bridge = CvBridge()
@@ -25,7 +27,7 @@ class YoloSubscriber(Node):
         self.detection_pub = self.create_publisher(DetectionArray, '/yolo/detections', 10) # Detection
 
         # Update path here depending on model being used
-        self.model = YOLO('/home/cjabrantes/ros2_px4_offboard_example_ws/src/image_processing/YOLOv8/best.pt')  
+        self.model = YOLO(self.get_parameter('model_path').value)
         # self.model = YOLO('/home/cjabrantes/ros2_px4_offboard_example_ws/src/image_processing/YOLOv11_1.0/yolo11n.pt')
         # self.model = YOLO('/home/cjabrantes/ros2_px4_offboard_example_ws/src/image_processing/yolo_model_export/content/runs/detect/train/weights/best.pt')  
 
