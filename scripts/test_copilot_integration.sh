@@ -2,6 +2,7 @@
 # Integration test for the copilot bridge over real ROS topics (run inside WSL after colcon build).
 # Case 1: mock mode answers a question grounded in /game/state.
 # Case 2: no mock and no OPENAI_API_KEY -> a clear "offline" answer (never a crash, never a hang).
+# Cases 3-4: the detail level in the question (T1 brief / T3 full) changes the answer.
 # Usage: scripts/test_copilot_integration.sh
 source /opt/ros/humble/setup.bash
 source ~/unity_ws/install/setup.bash
@@ -28,10 +29,10 @@ run_case() {
     timeout 15 ros2 topic echo --once /copilot/answer std_msgs/msg/String --field data > "$out" 2>/dev/null &
     local echo_pid=$!
     sleep 2
-    ros2 topic pub --once /copilot/question std_msgs/msg/String "{data: '{\"id\": \"t1\", \"text\": \"how many left?\", \"persona\": \"default\"}'}" > /dev/null 2>&1
+    ros2 topic pub --once /copilot/question std_msgs/msg/String "{data: '{\"id\": \"t1\", \"text\": \"how many left?\", \"persona\": \"default\", \"detail\": \"${DETAIL:-standard}\"}'}" > /dev/null 2>&1
     wait "$echo_pid"
 
-    if grep -q "\"id\": \"t1\"" "$out" && grep -q "\"source\": \"$expect_source\"" "$out" && grep -q "$expect_text" "$out"; then
+    if grep -q "\"id\": \"t1\"" "$out" && grep -q "\"source\": \"$expect_source\"" "$out" && grep -q "$expect_text" "$out"         && { [ -z "$FORBID" ] || ! grep -q "$FORBID" "$out"; }; then
         echo "PASS  $name"
     else
         echo "FAIL  $name"; echo "  answer: $(cat "$out")"; FAILED=1
@@ -43,5 +44,7 @@ run_case() {
 
 run_case "mock answer is grounded in game state" mock "2 of 8" -p mock:=true
 run_case "no key -> offline answer"                offline "offline"
+DETAIL=brief FORBID="%" run_case "T1 brief answer has no numbers" mock "I see" -p mock:=true
+DETAIL=full run_case "T3 full answer explains its reasoning" mock "Reasoning" -p mock:=true
 
 exit $FAILED
