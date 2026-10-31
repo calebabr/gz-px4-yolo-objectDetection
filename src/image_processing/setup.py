@@ -31,6 +31,7 @@ setup(
                             'drone_pose_publisher = image_processing.drone_pose_publisher:main',
                             'drone_behavior_node = image_processing.drone_behavior_node:main',
                             'distance_predictor_xyz = image_processing.distance_predictor_xyz:main',
+                            'copilot_bridge = image_processing.copilot_bridge:main',
         ],
     },
 )
